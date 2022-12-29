@@ -890,7 +890,7 @@ def calc_e_th_mid_C(V_fan_mid_C, q_hs_mid_C):
     
     # (30)
     Theta_ref_SH_C = get_Theta_ref_SH_C(Theta_ref_cnd_C)
-    print('Theta_ref_SH_C', Theta_ref_SH_C)
+    print('  Theta_ref_SH_C', Theta_ref_SH_C)
     
     # 4_8_a (1) ヒートポンプサイクルの理論暖房効率
     e_dash_th_mid_C = calc_e_ref_H_th(Theta_ref_evp_C, Theta_ref_cnd_C, Theta_ref_SC_C, Theta_ref_SH_C)
