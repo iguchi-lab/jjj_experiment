@@ -640,7 +640,7 @@ def calc_E_E_H_d_t(Theta_hs_out_d_t, Theta_hs_in_d_t, Theta_ex_d_t, V_hs_supply_
     """日付dの時刻tにおける1時間当たりの暖房時の消費電力量（kWh/h）(1)"""
 
     print('Theta_hs_out_d_t[0]', Theta_hs_out_d_t[0])
-    print('Theta_hs_in_d_t[0]',  Theta_hs_oin_d_t[0])
+    print('Theta_hs_in_d_t[0]',  Theta_hs_in_d_t[0])
     print('V_hs_supply_d_t[0]',  V_hs_supply_d_t[0])
 
     # (3)
