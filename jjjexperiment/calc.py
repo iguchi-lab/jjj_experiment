@@ -757,7 +757,7 @@ def get_E_E_C_d_t(Theta_hs_out_d_t, Theta_hs_in_d_t, Theta_ex_d_t, X_hs_out_d_t,
             
         # (18)
         e_th_C_d_t = dc_a.calc_e_th_C_d_t(Theta_ex_d_t, Theta_hs_in_d_t, X_hs_in_d_t, Theta_hs_out_d_t, V_hs_supply_d_t)
-        print('e_th_C_d_t', e_th_C_d_t)
+        print('e_th_C_d_t[5723]', e_th_C_d_t[5723])
             
         # (12)
         e_r_rtd_C = dc_a.get_e_r_rtd_C(e_th_rtd_C, q_hs_rtd_C, P_hs_rtd_C, P_fan_rtd_C)
