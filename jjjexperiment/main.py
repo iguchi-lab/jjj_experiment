@@ -155,6 +155,8 @@ def calc(input_data : dict):
     E_E_H_d_t: np.ndarray
     """日付dの時刻tにおける1時間当たりの暖房時の消費電力量(kWh/h)"""
 
+    print('calc.calc_E_E_H_d_t')
+    
     E_E_H_d_t, q_hs_H_d_t, E_E_fan_H_d_t = jjjexperiment.calc.calc_E_E_H_d_t(
         Theta_hs_out_d_t = Theta_hs_out_d_t,
         Theta_hs_in_d_t = Theta_hs_in_d_t,
