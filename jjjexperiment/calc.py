@@ -641,13 +641,13 @@ def calc_E_E_H_d_t(Theta_hs_out_d_t, Theta_hs_in_d_t, Theta_ex_d_t, V_hs_supply_
 
     # (3)
     q_hs_H_d_t = dc_a.get_q_hs_H_d_t(Theta_hs_out_d_t, Theta_hs_in_d_t, V_hs_supply_d_t, C_df_H_d_t, region)
-    print('q_hs_H_d_t', q_hs_H_d_t)
+    print('q_hs_H_d_t[0]', q_hs_H_d_t[0])
             
     if type == 'ダクト式セントラル空調機':
         # (37)
         #E_E_fan_H_d_t = dc_a.get_E_E_fan_H_d_t(P_fan_rtd_H, V_hs_vent_d_t, V_hs_supply_d_t, V_hs_dsgn_H, q_hs_H_d_t * 3.6 / 1000, f_SFP_H)
         E_E_fan_H_d_t = dc_a2.get_E_E_fan_H_d_t(P_fan_rtd_H, V_hs_vent_d_t, V_hs_supply_d_t, V_hs_dsgn_H, q_hs_H_d_t * 3.6 / 1000, f_SFP_H)
-        print('E_E_fan_H_d_t', E_E_fan_H_d_t)
+        print('E_E_fan_H_d_t[0]', E_E_fan_H_d_t[0])
             
         # (20)
         e_th_mid_H = dc_a.calc_e_th_mid_H(V_fan_mid_H, q_hs_mid_H)
@@ -659,7 +659,7 @@ def calc_E_E_H_d_t(Theta_hs_out_d_t, Theta_hs_in_d_t, Theta_ex_d_t, V_hs_supply_
 
         # (17)
         e_th_H_d_t = dc_a.calc_e_th_H_d_t(Theta_ex_d_t, Theta_hs_in_d_t, Theta_hs_out_d_t, V_hs_supply_d_t)
-        print('e_th_H_d_t', e_th_H_d_t)
+        print('e_th_H_d_t[0]', e_th_H_d_t[0])
             
         # (11)
         e_r_rtd_H = dc_a.get_e_r_rtd_H(e_th_rtd_H, q_hs_rtd_H, P_hs_rtd_H, P_fan_rtd_H)
@@ -675,15 +675,15 @@ def calc_E_E_H_d_t(Theta_hs_out_d_t, Theta_hs_in_d_t, Theta_ex_d_t, V_hs_supply_
 
         # (9)
         e_r_H_d_t = dc_a.get_e_r_H_d_t(q_hs_H_d_t, q_hs_rtd_H, q_hs_min_H, q_hs_mid_H, e_r_mid_H, e_r_min_H, e_r_rtd_H)
-        print('e_r_H_d_t', e_r_H_d_t)
+        print('e_r_H_d_t[0]', e_r_H_d_t[0])
             
         # (7)
         e_hs_H_d_t = dc_a.get_e_hs_H_d_t(e_th_H_d_t, e_r_H_d_t)
-        print('e_hs_H_d_t', e_hs_H_d_t)    
+        print('e_hs_H_d_t[0]', e_hs_H_d_t[0])    
 
         # (5)
         E_E_comp_H_d_t = dc_a.get_E_E_comp_H_d_t(q_hs_H_d_t, e_hs_H_d_t)
-        print('E_E_comp_H_d_t', E_E_comp_H_d_t)
+        print('E_E_comp_H_d_t[0]', E_E_comp_H_d_t[0])
             
         # (1)
         E_E_H_d_t = E_E_comp_H_d_t + E_E_fan_H_d_t
@@ -734,42 +734,55 @@ def get_E_E_C_d_t(Theta_hs_out_d_t, Theta_hs_in_d_t, Theta_ex_d_t, X_hs_out_d_t,
 
     # (4)
     q_hs_CS_d_t, q_hs_CL_d_t = get_q_hs_C_d_t_2(Theta_hs_out_d_t, Theta_hs_in_d_t, X_hs_out_d_t, X_hs_in_d_t, V_hs_supply_d_t, region)
-
+    print('q_hs_CS_d_t[5723]', q_hs_CS_d_t[5723])
+    print('q_hs_CL_d_t[5723]', q_hs_CL_d_t[5723])
+            
     if type == 'ダクト式セントラル空調機':
         # (4)
         q_hs_C_d_t = dc_a.get_q_hs_C_d_t(Theta_hs_out_d_t, Theta_hs_in_d_t, X_hs_out_d_t, X_hs_in_d_t, V_hs_supply_d_t, region)
-
+        print('q_hs_C_d_t[5723]', q_hs_C_d_t[5723])
+            
         # (38)
         #E_E_fan_C_d_t = dc_a.get_E_E_fan_C_d_t(P_fan_rtd_C, V_hs_vent_d_t, V_hs_supply_d_t, V_hs_dsgn_C, q_hs_C_d_t, f_SFP_C)
         E_E_fan_C_d_t = dc_a2.get_E_E_fan_C_d_t(P_fan_rtd_C, V_hs_vent_d_t, V_hs_supply_d_t, V_hs_dsgn_C, q_hs_C_d_t, f_SFP_C)
+        print('E_E_fan_C_d_t[5723]', E_E_fan_C_d_t[5723])
 
         # (22)
         e_th_mid_C = dc_a.calc_e_th_mid_C(V_fan_mid_C, q_hs_mid_C)
-
+        print('e_th_mid_C', e_th_mid_C)
+            
         # (21)
         e_th_rtd_C = dc_a.calc_e_th_rtd_C(V_fan_rtd_C, q_hs_rtd_C)
-
+        print('e_th_rtd_C', e_th_rtd_C)
+            
         # (18)
         e_th_C_d_t = dc_a.calc_e_th_C_d_t(Theta_ex_d_t, Theta_hs_in_d_t, X_hs_in_d_t, Theta_hs_out_d_t, V_hs_supply_d_t)
-
+        print('e_th_C_d_t', e_th_C_d_t)
+            
         # (12)
         e_r_rtd_C = dc_a.get_e_r_rtd_C(e_th_rtd_C, q_hs_rtd_C, P_hs_rtd_C, P_fan_rtd_C)
-
+        print('e_r_rtd_C', e_r_rtd_C)
+            
         # (16)
         e_r_min_C = dc_a.get_e_r_min_C(e_r_rtd_C)
-
+        print('e_r_min_C', e_r_min_C)
+            
         # (14)
         e_r_mid_C = dc_a.get_e_r_mid_C(e_r_rtd_C, e_th_mid_C, q_hs_mid_C, P_hs_mid_C, P_fan_mid_C, EquipmentSpec)
-
+        print('e_r_mid_C', e_r_mid_C)
+            
         # (10)
         e_r_C_d_t = dc_a.get_e_r_C_d_t(q_hs_C_d_t, q_hs_rtd_C, q_hs_min_C, q_hs_mid_C, e_r_mid_C, e_r_min_C, e_r_rtd_C)
-
+        print('e_r_C_d_t[5723]', e_r_C_d_t[5723])
+            
         # (8)
         e_hs_C_d_t = dc_a.get_e_hs_C_d_t(e_th_C_d_t, e_r_C_d_t)
-
+        print('e_hs_C_d_t[5723]', e_hs_C_d_t[5723])
+            
         # (6)
         E_E_comp_C_d_t = dc_a.get_E_E_comp_C_d_t(q_hs_C_d_t, e_hs_C_d_t)
-
+        print('E_E_comp_C_d_t[5723]', E_E_comp_C_d_t[5723])
+            
         # (2)
         E_E_C_d_t = E_E_comp_C_d_t + E_E_fan_C_d_t
     elif type == 'ルームエアコンディショナ活用型全館空調システム':
