@@ -878,7 +878,7 @@ def calc_e_th_mid_C(V_fan_mid_C, q_hs_mid_C):
     
     # (28)
     Theta_ref_evp_C = get_Theta_ref_evp_C(Theta_sur_f_hex_C)
-    print('  Theta_ref_env_C', Theta_ref_env_C)
+    print('  Theta_ref_env_C', Theta_ref_evp_C)
 
     # (27)
     Theta_ref_cnd_C = get_Theta_ref_cnd_C(35, Theta_ref_evp_C)
