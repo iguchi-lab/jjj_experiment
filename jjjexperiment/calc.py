@@ -655,28 +655,36 @@ def calc_E_E_H_d_t(Theta_hs_out_d_t, Theta_hs_in_d_t, Theta_ex_d_t, V_hs_supply_
             
         # (19)
         e_th_rtd_H = dc_a.calc_e_th_rtd_H(V_fan_rtd_H, q_hs_rtd_H)
-    
+        print('e_th_rtd_H', e_th_rtd_H)    
+
         # (17)
         e_th_H_d_t = dc_a.calc_e_th_H_d_t(Theta_ex_d_t, Theta_hs_in_d_t, Theta_hs_out_d_t, V_hs_supply_d_t)
-    
+        print('e_th_H_d_t', e_th_H_d_t)
+            
         # (11)
         e_r_rtd_H = dc_a.get_e_r_rtd_H(e_th_rtd_H, q_hs_rtd_H, P_hs_rtd_H, P_fan_rtd_H)
-    
+        print('e_r_rtd_H', e_r_rtd_H)    
+
         # (15)
         e_r_min_H = dc_a.get_e_r_min_H(e_r_rtd_H)
-    
+        print('e_r_min_H', e_r_min_H)
+            
         # (13)
         e_r_mid_H = dc_a.get_e_r_mid_H(e_r_rtd_H, e_th_mid_H, q_hs_mid_H, P_hs_mid_H, P_fan_mid_H, EquipmentSpec)
-    
+        print('e_r_mid_H', e_r_mid_H)    
+
         # (9)
         e_r_H_d_t = dc_a.get_e_r_H_d_t(q_hs_H_d_t, q_hs_rtd_H, q_hs_min_H, q_hs_mid_H, e_r_mid_H, e_r_min_H, e_r_rtd_H)
-    
+        print('e_r_H_d_t', e_r_H_d_t)
+            
         # (7)
         e_hs_H_d_t = dc_a.get_e_hs_H_d_t(e_th_H_d_t, e_r_H_d_t)
-    
+        print('e_hs_H_d_t', e_hs_H_d_t)    
+
         # (5)
         E_E_comp_H_d_t = dc_a.get_E_E_comp_H_d_t(q_hs_H_d_t, e_hs_H_d_t)
-    
+        print('E_E_comp_H_d_t', E_E_comp_H_d_t)
+            
         # (1)
         E_E_H_d_t = E_E_comp_H_d_t + E_E_fan_H_d_t
     elif type == 'ルームエアコンディショナ活用型全館空調システム':
