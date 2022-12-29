@@ -678,7 +678,7 @@ def calc_e_th_C_d_t(Theta_ex_d_t, Theta_hs_in_d_t, X_hs_in_d_t, Theta_hs_out_d_t
     for i in range(24 * 365):
         # (36)
         alpha_c_hex_C, alpha_dash_c_hex_C = get_alpha_c_hex_C(V_hs_supply_d_t[i], X_hs_in_d_t[i])
-
+        
         # (32)
         Theta_sur_f_hex_C[i] = get_Theta_sur_f_hex_C_calc(Theta_hs_in_d_t[i], Theta_hs_out_d_t[i], V_hs_supply_d_t[i],
                                                        alpha_c_hex_C)
@@ -698,6 +698,16 @@ def calc_e_th_C_d_t(Theta_ex_d_t, Theta_hs_in_d_t, X_hs_in_d_t, Theta_hs_out_d_t
         # 4_8_a (1) ヒートポンプサイクルの理論暖房効率
         e_dash_th_d_t[i] = calc_e_ref_H_th(Theta_ref_evp_C, Theta_ref_cnd_C, Theta_ref_SC_C, Theta_ref_SH_C)
 
+        if i == 5273:
+            print('  alpha_c_hex_C 5273',      alpha_c_hex_C)
+            print('  alpha_dash_c_hex_C 5273', alpha_dash_c_hex_C)
+            print('  Theta_sur_f_hex_C[5273]', Theta_sur_f_hex_C[5273])
+            print('  Theta_ref_evp_C 5273',    Theta_ref_evp_C)
+            print('  Theta_ref_cnd_C 5273',    Theta_ref_cnd_C)
+            print('  Theta_ref_SC_C 5273',     Theta_ref_SC_C)
+            print('  Theta_ref_SH_C 5273',     Theta_ref_SH_C)
+            print('  e_dash_th_d_t[5273]',     e_dash_th_d_t[5273])
+        
     # (18)
     return e_dash_th_d_t - 1
 
