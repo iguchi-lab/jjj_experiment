@@ -853,7 +853,9 @@ def calc_e_th_mid_C(V_fan_mid_C, q_hs_mid_C):
     X_hs_in = 0.010376
     # (36)
     alpha_c_hex_C, alpha_dash_c_hex_C = get_alpha_c_hex_C(V_fan_mid_C, X_hs_in)
-
+    print('  alpha_c_hex_C',      alpha_c_hex_C)
+    print('  alpha_dash_c_hex_C', alpha_dash_c_hex_C)
+          
     # (34)
     def func(x):
         """
@@ -872,22 +874,28 @@ def calc_e_th_mid_C(V_fan_mid_C, q_hs_mid_C):
 
     # x = fsolve(fun,x0) は、点 x0 を開始点として方程式 fun(x) = 0 (ゼロの配列) の解を求めようとする
     Theta_sur_f_hex_C = optimize.bisect(func, -273.15, 99.96)
-
+    print('  Theta_sur_f_hex_C', Theta_sur_f_hex_C)
+    
     # (28)
     Theta_ref_evp_C = get_Theta_ref_evp_C(Theta_sur_f_hex_C)
+    print('  Theta_ref_env_C', Theta_ref_env_C)
 
     # (27)
     Theta_ref_cnd_C = get_Theta_ref_cnd_C(35, Theta_ref_evp_C)
-
+    print('  Theta_ref_cnd_C', Theta_ref_cnd_C)
+    
     # (29)
     Theta_ref_SC_C = get_Theta_ref_SC_C(Theta_ref_cnd_C)
-
+    print('  Theta_ref_SC_C', Theta_ref_SC_C)
+    
     # (30)
     Theta_ref_SH_C = get_Theta_ref_SH_C(Theta_ref_cnd_C)
-
+    print('Theta_ref_SH_C', Theta_ref_SH_C)
+    
     # 4_8_a (1) ヒートポンプサイクルの理論暖房効率
     e_dash_th_mid_C = calc_e_ref_H_th(Theta_ref_evp_C, Theta_ref_cnd_C, Theta_ref_SC_C, Theta_ref_SH_C)
-
+    print('  e_dash_th_mid_C', e_dash_th_mid_C)
+    
     # (22)
     return e_dash_th_mid_C - 1
 
