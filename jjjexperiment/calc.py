@@ -758,7 +758,8 @@ def get_E_E_C_d_t(Theta_hs_out_d_t, Theta_hs_in_d_t, Theta_ex_d_t, X_hs_out_d_t,
         print('E_E_fan_C_d_t[5273]', E_E_fan_C_d_t[5273])
 
         # (22)
-        e_th_mid_C = dc_a.calc_e_th_mid_C(V_fan_mid_C, q_hs_mid_C)
+        #e_th_mid_C = dc_a.calc_e_th_mid_C(V_fan_mid_C, q_hs_mid_C)
+        e_th_mid_C = dc_a2.calc_e_th_mid_C(V_fan_mid_C, q_hs_mid_C)
         print('e_th_mid_C', e_th_mid_C)
             
         # (21)
