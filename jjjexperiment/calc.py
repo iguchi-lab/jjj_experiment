@@ -639,6 +639,10 @@ def calc_E_E_H_d_t(Theta_hs_out_d_t, Theta_hs_in_d_t, Theta_ex_d_t, V_hs_supply_
         region, type, q_rtd_C, q_rtd_H, P_rac_fan_rtd_H, q_max_C, q_max_H, e_rtd_H, dualcompressor_H, input_C_af_H, f_SFP_H, outdoorFile):
     """日付dの時刻tにおける1時間当たりの暖房時の消費電力量（kWh/h）(1)"""
 
+    print('Theta_hs_out_d_t[0]', Theta_hs_out_d_t[0])
+    print('Theta_hs_in_d_t[0]',  Theta_hs_oin_d_t[0])
+    print('V_hs_supply_d_t[0]',  V_hs_supply_d_t[0])
+
     # (3)
     q_hs_H_d_t = dc_a.get_q_hs_H_d_t(Theta_hs_out_d_t, Theta_hs_in_d_t, V_hs_supply_d_t, C_df_H_d_t, region)
     print('q_hs_H_d_t[0]', q_hs_H_d_t[0])
@@ -732,6 +736,12 @@ def get_E_E_C_d_t(Theta_hs_out_d_t, Theta_hs_in_d_t, Theta_ex_d_t, X_hs_out_d_t,
         EquipmentSpec, q_hs_rtd_C, P_hs_rtd_C, V_fan_rtd_C, P_fan_rtd_C, q_hs_mid_C, P_hs_mid_C, V_fan_mid_C, P_fan_mid_C, q_hs_min_C,
         region, type, q_rtd_C, e_rtd_C, P_rac_fan_rtd_C, q_max_C, input_C_af_C, dualcompressor_C, f_SFP_C, outdoorFile):
 
+    print('Theta_hs_out_d_t[5723]', Theta_hs_out_d_t[5723])
+    print('Theta_hs_in_d_t[5723]',  Theta_hs_oin_d_t[5723])
+    print('X_hs_out_d_t[5723]',     X_hs_out_d_t[5723])
+    print('X_hs_out_d_t[5723]',     X_hs_out_d_t[5723])
+    print('V_hs_supply_d_t[5723]',  V_hs_supply_d_t[5723])
+            
     # (4)
     q_hs_CS_d_t, q_hs_CL_d_t = get_q_hs_C_d_t_2(Theta_hs_out_d_t, Theta_hs_in_d_t, X_hs_out_d_t, X_hs_in_d_t, V_hs_supply_d_t, region)
     print('q_hs_CS_d_t[5723]', q_hs_CS_d_t[5723])
