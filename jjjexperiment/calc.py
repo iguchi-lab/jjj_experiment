@@ -739,7 +739,7 @@ def get_E_E_C_d_t(Theta_hs_out_d_t, Theta_hs_in_d_t, Theta_ex_d_t, X_hs_out_d_t,
     print('Theta_hs_out_d_t[5273]', Theta_hs_out_d_t[5273])
     print('Theta_hs_in_d_t[5273]',  Theta_hs_in_d_t[5273])
     print('X_hs_out_d_t[5273]',     X_hs_out_d_t[5273])
-    print('X_hs_out_d_t[5273]',     X_hs_out_d_t[5273])
+    print('X_hs_in_d_t[5273]',      X_hs_in_d_t[5273])
     print('V_hs_supply_d_t[5273]',  V_hs_supply_d_t[5273])
             
     # (4)
