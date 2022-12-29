@@ -736,26 +736,26 @@ def get_E_E_C_d_t(Theta_hs_out_d_t, Theta_hs_in_d_t, Theta_ex_d_t, X_hs_out_d_t,
         EquipmentSpec, q_hs_rtd_C, P_hs_rtd_C, V_fan_rtd_C, P_fan_rtd_C, q_hs_mid_C, P_hs_mid_C, V_fan_mid_C, P_fan_mid_C, q_hs_min_C,
         region, type, q_rtd_C, e_rtd_C, P_rac_fan_rtd_C, q_max_C, input_C_af_C, dualcompressor_C, f_SFP_C, outdoorFile):
 
-    print('Theta_hs_out_d_t[5723]', Theta_hs_out_d_t[5723])
-    print('Theta_hs_in_d_t[5723]',  Theta_hs_oin_d_t[5723])
-    print('X_hs_out_d_t[5723]',     X_hs_out_d_t[5723])
-    print('X_hs_out_d_t[5723]',     X_hs_out_d_t[5723])
-    print('V_hs_supply_d_t[5723]',  V_hs_supply_d_t[5723])
+    print('Theta_hs_out_d_t[5273]', Theta_hs_out_d_t[5273])
+    print('Theta_hs_in_d_t[5273]',  Theta_hs_oin_d_t[5273])
+    print('X_hs_out_d_t[5273]',     X_hs_out_d_t[5273])
+    print('X_hs_out_d_t[5273]',     X_hs_out_d_t[5273])
+    print('V_hs_supply_d_t[5273]',  V_hs_supply_d_t[5273])
             
     # (4)
     q_hs_CS_d_t, q_hs_CL_d_t = get_q_hs_C_d_t_2(Theta_hs_out_d_t, Theta_hs_in_d_t, X_hs_out_d_t, X_hs_in_d_t, V_hs_supply_d_t, region)
-    print('q_hs_CS_d_t[5723]', q_hs_CS_d_t[5723])
-    print('q_hs_CL_d_t[5723]', q_hs_CL_d_t[5723])
+    print('q_hs_CS_d_t[5273]', q_hs_CS_d_t[5273])
+    print('q_hs_CL_d_t[5273]', q_hs_CL_d_t[5273])
             
     if type == 'ダクト式セントラル空調機':
         # (4)
         q_hs_C_d_t = dc_a.get_q_hs_C_d_t(Theta_hs_out_d_t, Theta_hs_in_d_t, X_hs_out_d_t, X_hs_in_d_t, V_hs_supply_d_t, region)
-        print('q_hs_C_d_t[5723]', q_hs_C_d_t[5723])
+        print('q_hs_C_d_t[5273]', q_hs_C_d_t[5273])
             
         # (38)
         #E_E_fan_C_d_t = dc_a.get_E_E_fan_C_d_t(P_fan_rtd_C, V_hs_vent_d_t, V_hs_supply_d_t, V_hs_dsgn_C, q_hs_C_d_t, f_SFP_C)
         E_E_fan_C_d_t = dc_a2.get_E_E_fan_C_d_t(P_fan_rtd_C, V_hs_vent_d_t, V_hs_supply_d_t, V_hs_dsgn_C, q_hs_C_d_t, f_SFP_C)
-        print('E_E_fan_C_d_t[5723]', E_E_fan_C_d_t[5723])
+        print('E_E_fan_C_d_t[5273]', E_E_fan_C_d_t[5273])
 
         # (22)
         e_th_mid_C = dc_a.calc_e_th_mid_C(V_fan_mid_C, q_hs_mid_C)
@@ -767,7 +767,7 @@ def get_E_E_C_d_t(Theta_hs_out_d_t, Theta_hs_in_d_t, Theta_ex_d_t, X_hs_out_d_t,
             
         # (18)
         e_th_C_d_t = dc_a.calc_e_th_C_d_t(Theta_ex_d_t, Theta_hs_in_d_t, X_hs_in_d_t, Theta_hs_out_d_t, V_hs_supply_d_t)
-        print('e_th_C_d_t[5723]', e_th_C_d_t[5723])
+        print('e_th_C_d_t[5273]', e_th_C_d_t[5273])
             
         # (12)
         e_r_rtd_C = dc_a.get_e_r_rtd_C(e_th_rtd_C, q_hs_rtd_C, P_hs_rtd_C, P_fan_rtd_C)
@@ -783,15 +783,15 @@ def get_E_E_C_d_t(Theta_hs_out_d_t, Theta_hs_in_d_t, Theta_ex_d_t, X_hs_out_d_t,
             
         # (10)
         e_r_C_d_t = dc_a.get_e_r_C_d_t(q_hs_C_d_t, q_hs_rtd_C, q_hs_min_C, q_hs_mid_C, e_r_mid_C, e_r_min_C, e_r_rtd_C)
-        print('e_r_C_d_t[5723]', e_r_C_d_t[5723])
+        print('e_r_C_d_t[5273]', e_r_C_d_t[5273])
             
         # (8)
         e_hs_C_d_t = dc_a.get_e_hs_C_d_t(e_th_C_d_t, e_r_C_d_t)
-        print('e_hs_C_d_t[5723]', e_hs_C_d_t[5723])
+        print('e_hs_C_d_t[5273]', e_hs_C_d_t[5273])
             
         # (6)
         E_E_comp_C_d_t = dc_a.get_E_E_comp_C_d_t(q_hs_C_d_t, e_hs_C_d_t)
-        print('E_E_comp_C_d_t[5723]', E_E_comp_C_d_t[5723])
+        print('E_E_comp_C_d_t[5273]', E_E_comp_C_d_t[5273])
             
         # (2)
         E_E_C_d_t = E_E_comp_C_d_t + E_E_fan_C_d_t
